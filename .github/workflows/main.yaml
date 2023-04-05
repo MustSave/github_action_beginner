@@ -90,3 +90,8 @@ jobs:
         echo "The value of the first output is: ${{ steps.swm.outputs.Apr5}}"
         echo "The value of the first output is: ${{ steps.swm.outputs.april06}}"
         echo "$GITHUB_ENV"
+    
+    - name: Get secret value
+      shell: bash
+      run: | 
+        echo "My secret value is: ${{ secrets.MY_SECRET }}"
