@@ -6,7 +6,7 @@ env:
   WORKFLOW_LEVEL: "This value comes from the WORKFLOW level"
 
 jobs:
-  first-job:
+  first-job: # 각 Job들은 종속성 X
     name: 'First Job'
 
     runs-on: ubuntu-latest
@@ -15,7 +15,7 @@ jobs:
       JOB_LEVEL: "This value comes from the JOB level"
 
     steps:
-    - name: Say Hello World
+    - name: Say Hello World # - 표시는 Array (순서대로), dictionary는 순서 X(강제로 부여는 가능)
       shell: bash
       run: |
         echo "Hello World"
