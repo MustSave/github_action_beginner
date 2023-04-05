@@ -1,33 +1,28 @@
 name: 'SWM GitHub Actions Basic'
 
-on:
-  push:
-    branches:
-    - main
-    tags:
-    - 'v*'
+on: push
 
 jobs:
   first-job:
     name: 'First Job'
 
-    strategy:
-      matrix:
-        os: [ 'windows-latest', 'macos-latest', 'ubuntu-latest' ]
-        nodejs: ['16.x', '18.x']
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Say Hello World on ${{ matrix.os }}
+    - name: Say Hello World
       shell: bash
       run: |
-        # echo "Hello World on ${{ matrix.os }} with ${{ matrix.nodejs }}"
-        echo "Hello World on ${{ matrix.os }}"
-    
-    - name: Say Hello World on ${{ matrix.os }}
-      if: matrix.os == 'ubuntu-latest'
+        echo "Hello World from first job"
+  
+  second-job:
+    name: 'Second Job'
+    needs:
+      - first-job
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Say Hello World
       shell: bash
       run: |
-        echo "Hello Ubuntu on ${{ matrix.os }} with ${{ matrix.nodejs }}"
-        echo "Hello Ubuntu on ${{ matrix.os }} with ${{ matrix.nodejs }}"
+        echo "Hello World from second job"
