@@ -72,3 +72,15 @@ jobs:
       run: |
         echo "Value 1: $STEPSET_VALUE_1"
         echo "Value 2: $STEPSET_VALUE_2"
+    
+    - name: Set output value # 현재 step의 결과값을 전달
+      id: swm
+      shell: bash
+      run: |
+        first_value="This is the value for the first output"
+        echo "::set-output name=Apr5::$first_value"
+    
+    - name: Get output value
+      shell: bash
+      run: |
+        echo "The value of the first output is: ${{ steps.swm.outputs.Apr5}}"
