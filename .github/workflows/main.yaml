@@ -1,5 +1,5 @@
 name: 'SWM GitHub Actions Basic'
-
+# CD (Countinuous Delivery/Deploy) 차이.
 on: push
 
 jobs:
