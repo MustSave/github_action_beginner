@@ -78,6 +78,9 @@ jobs:
       shell: bash
       run: |
         first_value="This is the value for the first output"
+
+        echo "::add-mask::$first_value" # 마스킹. 민감한 정보 지우기
+
         echo "::set-output name=Apr5::$first_value" # deprecated. Use the method below...
         echo "april06=$first_value" >> $GITHUB_OUTPUT
     
