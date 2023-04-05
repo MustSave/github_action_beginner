@@ -55,4 +55,8 @@ jobs:
     
     - name: Set environment variable 1
         shell: bash
-        run: "STEPSET_VALUE_1='This is the value 1 set in the step'" >> $GITHUB_ENV
+        run: echo "STEPSET_VALUE_1='This is the value 1 set in the step'" >> $GITHUB_ENV
+    
+    - name: Set environment variable 2
+        shell: pwsh
+        run: echo "STEPSET_VALUE_1='This is the value 1 set in the step'" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf-8 -Append
