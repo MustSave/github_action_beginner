@@ -15,7 +15,7 @@ jobs:
     - name: Send message to Webex space
       uses: ./.github/actions
       with:
-        webexToken: ${{ secrets.WEBEX_TOKEN }}
-        webexRoomId: ${{ secrets.WEBEX_ROOM_ID }}
+        webexToken: ${{ secrets.ACCESS_TOKEN }}
+        webexRoomId: ${{ secrets.ROOM_ID }}
         bodyText: "Message sent by GitHub Actions from ${{ github.repository }}"
         bodyMarkdown: "Message sent by **GitHub Actions** from `${{ github.repository }}`"
