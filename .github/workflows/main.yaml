@@ -79,8 +79,10 @@ jobs:
       run: |
         first_value="This is the value for the first output"
         echo "::set-output name=Apr5::$first_value"
+        echo "april06=$first_value" >> $GITHUB_OUTPUT
     
     - name: Get output value
       shell: bash
       run: |
         echo "The value of the first output is: ${{ steps.swm.outputs.Apr5}}"
+        echo "The value of the first output is: ${{ steps.swm.outputs.april06}}"
