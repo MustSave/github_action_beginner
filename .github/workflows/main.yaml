@@ -18,7 +18,7 @@ jobs:
       shell: bash
       run: |
         # echo "Hello World on ${{ matrix.os }} with ${{ matrix.nodejs }}"
-        echo "Hello World on ${{ matrix.os }} with ${{ matrix.nodejs }}"
+        echo "Hello World on ${{ matrix.os }}"
     
     - name: Say Hello World on ${{ matrix.os }}
       if: matrix.os == 'ubuntu-latest'
